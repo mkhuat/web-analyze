@@ -1,0 +1,10 @@
+/*
+	Melissa Khuat
+	Computer Science & Engineering
+	University of Washington, 2017
+	Slack Coding Exercise: Website Analyzer (Styles)
+*/
+
+body, #query {
+	font-family: "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+}

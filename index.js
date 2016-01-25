@@ -23,8 +23,9 @@
 	
 	function getWebContent() {
 		var url = document.getElementById("url").value;
-		var sourceCodeArea = document.getElementById("mySource");
+		var sourceCodeArea = document.getElementById("source");
 		var errMsg = document.getElementById("error");
+		var analysisArea = document.getElementById("analysis");
 	
 		// Check for empty url strings
 		if (url.trim() == "") {
@@ -53,21 +54,64 @@
 				var res = document.createElement('xmp');
 				res.innerHTML = source;
 				res.classList.add("wrap-text");
+				resetSections();
 				sourceCodeArea.appendChild(res);
+			
+			
+				// Display stats
+				var arr = source.match(/(<([a-z1-6]*))/gi);
+			
+				// Construct a dictionary of tags-->count
+				var dict = [];				
+  				for (var i = 0; i < arr.length; i++) {
+					var keyIndex = indexOfKey(dict, arr[i]);
+					var el = "" + arr[i];
+					if (keyIndex == -1) {
+						// Add new entry to dict if one does not exist
+						dict.push({key:el, 
+								   value:1});					
+					} else {
+						// Update entry
+						var count = dict[keyIndex].value + 1;
+						dict.splice(keyIndex, 1);
+						dict.push({key:el, 
+								   value:count});
+					}
+				}
+
+				for (var i = 0; i < dict.length; i++) {
+					var text = document.createElement('p');
+					text.innerHTML = (dict[i].key).substring(1)  + " " + dict[i].value;
+					analysisArea.appendChild(text);
+				}
+			
+			
 			}
-		});
-		
+		});		
 		
 	}
 	
+	function indexOfKey(dict, key) {
+		for (var i = 0; i < dict.length; i++) {
+			if (dict[i].key == key) return i;			
+		}
+		return -1;
+	}
+	
+	function resetSections() {
+		document.getElementById("source").innerHTML = "";
+		document.getElementById("analysis").innerHTML = "";
+	}
+	
 	// Sets display of element with given id (show or hide)
-	function toggleLoad() {
+/* 	function toggleLoad() {
 		display = "";
 		var load = document.getElementById("loading");
 		if (load.style.display == "") display = "none";
 		load.style.display = display;
 	}
-	
+ */	
+
 })();
 
 

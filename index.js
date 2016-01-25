@@ -57,7 +57,6 @@
 				resetSections();
 				sourceCodeArea.appendChild(res);
 			
-			
 				// Display stats
 				var arr = source.match(/(<([a-z1-6]*))/gi);
 			

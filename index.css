@@ -9,6 +9,16 @@ body, #query {
 	font-family: "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
 }
 
+#error {
+	padding: 15px;
+	background: #DE8A99;
+	height: 50px;
+	margin: 10px 0;
+	width: 500px;
+	box-shadow: 0 0 3px black;
+	border-radius: 10px;
+}
+
 #mySource {
 	width: 100%;
 }

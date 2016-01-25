@@ -20,18 +20,23 @@
 		
 	};
 
-	// 
+	
 	function getWebContent() {
 		var url = document.getElementById("url").value;
 		var sourceCodeArea = document.getElementById("mySource");
+		var errMsg = document.getElementById("error");
 	
 		// Check for empty url strings
 		if (url.trim() == "") {
 			// make a div saying "Please enter a valid website address"
+			var msg = document.createElement("p");
+			msg.innerHTML = "Please enter a valid website address";
+			errMsg.appendChild(msg);
+			errMsg.style.display = "";
 			return;
 		}
 	
-		// The Ajax requests require "http://" to prefix the website name
+		// The Ajax request requires "http://" to prefix the website name.
 		// Example: request for "slack.com" must be prefixed with "http://"
 		if (url.indexOf("http://") != 0 && url.indexOf("https://") != 0) {
 			var prefix = "http://"
@@ -43,21 +48,16 @@
 			type: 'GET',
 			dataType: 'xml',
 			success: function(data) {
-				// Display tag statistics
-				
-				var xmlDoc = data.responseXML;
-				var res = document.createElement('p');
-				res.innerHTML = xmlDoc.length;
-				sourceCodeArea.appendChild(res);
- 				
 				// Display source code
-/* 				var source = data.responseText;
+  				var source = data.responseText;
 				var res = document.createElement('xmp');
 				res.innerHTML = source;
 				res.classList.add("wrap-text");
 				sourceCodeArea.appendChild(res);
- */			}
+			}
 		});
+		
+		
 	}
 	
 	// Sets display of element with given id (show or hide)

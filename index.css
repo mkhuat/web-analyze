@@ -6,6 +6,10 @@
  *
 */
 
+.oompaloompa {
+	color: #ff8300;
+}
+
 .cf:before, .cf:after{
 	content: "";
 	display: table;
@@ -20,7 +24,7 @@
 }  
 
 #flatTable {  
-	margin-top: 25px;
+	margin-top: 30px;
 	width:  80%;
 	border-collapse:  collapse;  
 	font-weight:  bold;

@@ -139,7 +139,7 @@ section #analysisScroll, section #sourceScroll{
 }
 
 section h2 {
-    margin: 0;
+    margin-bottom: 8px;
     font-size: 3em;
 }
 

@@ -12,8 +12,6 @@
 "use strict";
 
 (function() {
-	var currEntry;
-	var currWord;
 
 	/* Sets up the event handlers on the page */
 	window.onload = function() {
@@ -123,13 +121,14 @@
 			table.appendChild(row);
 		}
 		
-		/* jQuery event listeners on entries in the analysis table */
+		/* jQuery event listeners for entries in the analysis table */
 		$("#flatTable").on("mouseenter", ".entry", function() {
-			this.style.background = "#ffd9b3";
-			
+			$(this).css('background-color', '#ffd9b3');
 		}).on("mouseleave", ".entry", function() {
-			this.style.background = "#edeced";
+			$(this).css('background-color', '#edeced');
 		}).on("click", ".entry", function() {
+			refreshSelection();   /* orange oompaloompa class removed */
+			$(this).addClass('oompaloompa'); 
 			$("#source").unhighlight();
 			highlightMatches(this.childNodes[0].textContent);
 		});
@@ -147,11 +146,18 @@
 		return -1;
 	}
 	
-	/* Removes previous entries in Analysis table */
+	/* Removes previouly selected/highlighted entries in Analysis table */
+	function refreshSelection() {
+		var entries = document.getElementsByClassName("entry");
+		for (var i = 0; i < entries.length; i++) {
+			entries[i].classList.remove('oompaloompa');
+		}
+	}
+	
+	/* Removes entries in Analysis table from previous URL search */
 	function refreshTable() {
 		$("#flatTable").children().slice(1).remove();
 	}
-
 	
 	/* Highlights opening and closing tags that match the given target */
 	function highlightMatches(target) {

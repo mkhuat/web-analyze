@@ -19,6 +19,7 @@
 		queryButton.onclick = getWebContent;		
 	};
 	
+	/* Fetches and displays analysis and source code */
 	function getWebContent() {
 		var url = document.getElementById("url").value;
 		var errMsg = document.getElementById("error");
@@ -51,6 +52,7 @@
 				displayResultSections();
 				displaySourceCode(source);
 				
+				/* Simple filter for HTML tags. Ideal: XML parsing. */
 				var arr = source.match(/(<([a-z1-6-]*))/gi);			
 				var dict = createCountDict(arr);
 				displayTagCount(dict);	

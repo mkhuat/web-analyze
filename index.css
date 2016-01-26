@@ -6,8 +6,12 @@
  *
 */
 
-.oompaloompa {
-	color: #ff8300;
+.cf{
+	zoom: 1;
+}  
+
+.cf:after{
+	clear: both;
 }
 
 .cf:before, .cf:after{
@@ -15,27 +19,19 @@
 	display: table;
 }
 
-.cf:after{
-	clear: both;
-}
-
-.cf{
-	zoom: 1;
-}  
-
 #flatTable {  
+	border-collapse:  collapse;  
+	color:  #6b6b6b;
+	font-family:  Lato, sans-serif;
+	font-weight:  bold;
 	margin-top: 30px;
 	width:  80%;
-	border-collapse:  collapse;  
-	font-weight:  bold;
-	font-family:  Lato, sans-serif;
-	color:  #6b6b6b;
 }  
   
 #flatTable tr {
-	height: 40px;
 	background: #edeced;
 	border-bottom: rgba(0,0,0,.05) 1px solid;
+	height: 40px;
 }
 
 #flatTable td {    
@@ -44,85 +40,85 @@
 }
 
 #flatTable #titleTr {
-	font-size: 14pt;
-	height: 72px;  
-	color: #f6f3f7; 
 	background: #418a95;  
 	border: 0px solid;
+	color: #f6f3f7; 
+	font-size: 14pt;
+	height: 72px;  
 }
 
 #flatTable #headingTr {
-	height: 35px;
 	background: #63ABB7;
+	border: 0px solid;
 	color: #f6f3f7;
 	font-size: 9pt;
-	border: 0px solid;
+	height: 35px;
 }  
 
 /* Form wrapper styling */
 .form-wrapper {
-	width: 450px;
-	padding: 15px;
-	margin: 25px auto 50px auto;
 	background: #444;
 	background: rgba(0,0,0,.2);
 	border-radius: 10px;
 	box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+	margin: 25px auto 50px auto;
+	padding: 15px;
+	width: 450px;
 }
 
 /* Form text input */
 .form-wrapper input {
+	background: #eee;
+	border: 0;
+	border-radius: 3px 0 0 3px;      
 	color: #20232A;
-	width: 310px;
-	height: 40px;
-	padding-left: 10px;
 	float: left;    
 	font: 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
-	border: 0;
-	background: #eee;
-	border-radius: 3px 0 0 3px;      
+	height: 40px;
+	padding-left: 10px;
+	width: 310px;
 }
 
 .form-wrapper input:focus {
-	outline: 0;
 	background: #fff;
 	box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+	outline: 0;
 }
 
 .form-wrapper input::-webkit-input-placeholder {
 	color: #999;
-	font-weight: normal;
 	font-style: italic;
+	font-weight: normal;
 }
 
 .form-wrapper input:-moz-placeholder {
 	color: #999;
-	font-weight: normal;
 	font-style: italic;
+	font-weight: normal;
 }
 
 .form-wrapper input:-ms-input-placeholder {
 	color: #999;
-	font-weight: normal;
 	font-style: italic;
+	font-weight: normal;
 }    
 
 /* Form submit button */
 .form-wrapper button {
+	background: #ffb266;
+	border: 0;
+	border-radius: 0 3px 3px 0;      
+	color: #fff;
+	cursor: pointer;
+	float: right;
+	font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+	height: 40px;
 	overflow: visible;
 	position: relative;
-	float: right;
-	border: 0;
 	padding: 0;
-	cursor: pointer;
-	height: 40px;
-	width: 110px;
-	font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
-	color: #fff;
-	text-transform: uppercase;
-	background: #ffb266;
-	border-radius: 0 3px 3px 0;      
 	text-shadow: 0 -1px 0 rgba(0, 0 ,0, .1);
+	text-transform: uppercase;
+	width: 110px;
 }   
   
 .form-wrapper button:hover{		
@@ -137,13 +133,13 @@
 
 /* Button arrow */
 .form-wrapper button:before { 
-	content: '';
-	position: absolute;
 	border-width: 8px 8px 8px 0;
 	border-style: solid solid solid none;
 	border-color: transparent #ffb266 transparent;
-	top: 12px;
+	content: '';
 	left: -6px;
+	position: absolute;
+	top: 12px;
 }
 
 .form-wrapper button:hover:before{
@@ -165,6 +161,10 @@
 	background-color: #ffd9b3;
 }
 
+.oompaloompa {
+	color: #ff8300;
+}
+
 #mySource {
 	width: 100%;
 }
@@ -172,6 +172,8 @@
 .wrap-text {
 	/* Different ways of wrapping text, keep 
 	 all for max browser compatibility */
+	overflow-wrap: break-word;
+	-ms-word-break: break-all;
 	white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
 	white-space: -pre-wrap;      			/* Opera 4-6 */
 	white-space: -o-pre-wrap;    			/* Opera 7 */
@@ -180,6 +182,4 @@
 	white-space: -webkit-pre-wrap; 			/* Newer versions of Chrome/Safari*/
 	word-break: break-all;
 	white-space: normal;
-	overflow-wrap: break-word;
-	-ms-word-break: break-all;
 }

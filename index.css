@@ -7,128 +7,158 @@
 */
 
 .cf:before, .cf:after{
-    content:"";
-    display:table;
+	content: "";
+	display: table;
 }
 
 .cf:after{
-    clear:both;
+	clear: both;
 }
 
 .cf{
-    zoom:1;
+	zoom: 1;
 }  
 
-#error {
-	padding: 15px;
-	background: #DE8A99;
-	height: 50px;
-	margin: 10px 0;
-	width: 500px;
-	box-shadow: 0 0 3px black;
-	border-radius: 10px;
+#flatTable {  
+	margin-top: 25px;
+	width:  80%;
+	border-collapse:  collapse;  
+	font-weight:  bold;
+	font-family:  Lato, sans-serif;
+	color:  #6b6b6b;
+}  
+  
+#flatTable tr {
+	height: 40px;
+	background: #edeced;
+	border-bottom: rgba(0,0,0,.05) 1px solid;
 }
+
+#flatTable td {    
+	box-sizing: border-box;
+	padding-left: 30px;
+}
+
+#flatTable #titleTr {
+	font-size: 14pt;
+	height: 72px;  
+	color: #f6f3f7; 
+	background: #418a95;  
+	border: 0px solid;
+}
+
+#flatTable #headingTr {
+	height: 35px;
+	background: #63ABB7;
+	color: #f6f3f7;
+	font-size: 9pt;
+	border: 0px solid;
+}  
 
 /* Form wrapper styling */
 .form-wrapper {
-    width: 450px;
-    padding: 15px;
-    margin: 25px auto 50px auto;
-    background: #444;
-    background: rgba(0,0,0,.2);
-    border-radius: 10px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+	width: 450px;
+	padding: 15px;
+	margin: 25px auto 50px auto;
+	background: #444;
+	background: rgba(0,0,0,.2);
+	border-radius: 10px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
 }
 
 /* Form text input */
 .form-wrapper input {
 	color: #20232A;
-    width: 310px;
-    height: 40px;
-    padding-left: 10px;
-    float: left;    
-    font: 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
-    border: 0;
-    background: #eee;
-    border-radius: 3px 0 0 3px;      
+	width: 310px;
+	height: 40px;
+	padding-left: 10px;
+	float: left;    
+	font: 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+	border: 0;
+	background: #eee;
+	border-radius: 3px 0 0 3px;      
 }
 
 .form-wrapper input:focus {
-    outline: 0;
-    background: #fff;
-    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+	outline: 0;
+	background: #fff;
+	box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
 }
 
 .form-wrapper input::-webkit-input-placeholder {
-   color: #999;
-   font-weight: normal;
-   font-style: italic;
+	color: #999;
+	font-weight: normal;
+	font-style: italic;
 }
 
 .form-wrapper input:-moz-placeholder {
-    color: #999;
-    font-weight: normal;
-    font-style: italic;
+	color: #999;
+	font-weight: normal;
+	font-style: italic;
 }
 
 .form-wrapper input:-ms-input-placeholder {
-    color: #999;
-    font-weight: normal;
-    font-style: italic;
+	color: #999;
+	font-weight: normal;
+	font-style: italic;
 }    
 
 /* Form submit button */
 .form-wrapper button {
-    overflow: visible;
-    position: relative;
-    float: right;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    height: 40px;
-    width: 110px;
-    font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
-    color: #fff;
-    text-transform: uppercase;
-    background: #ffb266;
-    border-radius: 0 3px 3px 0;      
-    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .1);
+	overflow: visible;
+	position: relative;
+	float: right;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	height: 40px;
+	width: 110px;
+	font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+	color: #fff;
+	text-transform: uppercase;
+	background: #ffb266;
+	border-radius: 0 3px 3px 0;      
+	text-shadow: 0 -1px 0 rgba(0, 0 ,0, .1);
 }   
   
 .form-wrapper button:hover{		
-    background: #ffa54d;
+	background: #ffa54d;
 }	
   
 .form-wrapper button:active,
 .form-wrapper button:focus{   
-    background: #ff9833;
+	background: #ff9833;
 	outline: 0;   
 }
 
 /* Button arrow */
 .form-wrapper button:before { 
-    content: '';
-    position: absolute;
-    border-width: 8px 8px 8px 0;
-    border-style: solid solid solid none;
-    border-color: transparent #ffb266 transparent;
-    top: 12px;
-    left: -6px;
+	content: '';
+	position: absolute;
+	border-width: 8px 8px 8px 0;
+	border-style: solid solid solid none;
+	border-color: transparent #ffb266 transparent;
+	top: 12px;
+	left: -6px;
 }
 
 .form-wrapper button:hover:before{
-    border-right-color: #ffa54d;
+	border-right-color: #ffa54d;
 }
 
 .form-wrapper button:focus:before,
 .form-wrapper button:active:before{
-        border-right-color: #ff9833;
+	border-right-color: #ff9833;
 }      
 
 /* Remove extra button spacing for Mozilla Firefox */
 .form-wrapper button::-moz-focus-inner { 
     border: 0;
     padding: 0;
+}
+
+.highlight {
+	background-color: #ffd9b3;
 }
 
 #mySource {

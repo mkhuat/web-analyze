@@ -25,6 +25,7 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -55,11 +56,14 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
+                    <li class="page-scroll" style="display: None">
                         <a href="#analysisScroll">Analysis</a>
                     </li>
-                    <li class="page-scroll">
+                    <li class="page-scroll" style="display: None">
                         <a href="#sourceScroll">Source Code</a>
+                    </li>
+					<li class="page-scroll" style="display: None">
+                        <a href="#page-top">Search Again</a>
                     </li>
                 </ul>
             </div>
@@ -83,22 +87,39 @@
         </div>
     </header>
 
-    <!-- Analysis Section -->
-    <section id="analysisScroll">
-        <div class="container">
-			<h2>ANALYSIS</h2>
-            <div id="analysis"></div>
-        </div>
-    </section>
+	<!-- Results section -->
+	<section id="resultsArea" style="display: None">
+	
+		<!-- Analysis Section -->
+		<section id="analysisScroll">
+			<div class="container">
+				<h2>ANALYSIS</h2><br>
+				<p>Click on an entry to highlight the tags in the source code view</p>
+				
+				<div id="analysis"></div>
+					<table id="flatTable">
+						<tr id="titleTr">
+							<td id="titleTd">HTML TAGS</td>
+							<td colspan="2"></td>
+						</tr>
+						<tr id="headingTr">
+							<td>TAG NAME</td>
+							<td>COUNT</td>
+						</tr>
+					</table>
+			</div>
+		</section>
 
-    <!-- Source Code Section -->
-    <section id="sourceScroll">
-        <div class="container">
-			<h2>SOURCE CODE</h2>
-            <div id="source"></div>
-        </div>        
-    </section>
-
+		<!-- Source Code Section -->
+		<section id="sourceScroll">
+			<div class="container">
+				<h2>SOURCE CODE</h2>
+				<div id="source"></div>
+			</div>        
+		</section>
+		
+	</section>
+		
     <!-- Footer -->
     <footer class="text-center">
         
@@ -146,6 +167,7 @@
     <!-- Custom JavaScript -->
     <script src="js/freelancer.js"></script>
 	<script src="crossdomainajax.js"></script>
+	<script src="jquery.highlight.js"></script>
 	<script src="index.js" type="text/javascript"></script>
 	
 </body>

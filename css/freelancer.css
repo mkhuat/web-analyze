@@ -134,27 +134,13 @@ header .intro-text .skills {
     border: 0;
 }
 
-section {
-    padding: 100px 0;
+section #analysisScroll, section #sourceScroll{
+    padding: 85px 0;
 }
 
 section h2 {
     margin: 0;
     font-size: 3em;
-}
-
-section.success {
-    color: #fff;
-    background: #ACBEBE;
-}
-
-section.success a,
-section.success a:hover,
-section.success a:focus,
-section.success a:active,
-section.success a.active {
-    outline: 0;
-    color: #20232A;
 }
 
 @media(max-width:767px) {

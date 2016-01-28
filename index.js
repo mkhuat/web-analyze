@@ -83,14 +83,12 @@
 			var el = "" + arr[i];
 			if (keyIndex == -1) {
 				/* Add new entry to dict if one does not exist */
-				dict.push({key:el, 
-						   value:1});					
+				dict.push({key:el, value:1});					
 			} else {
 				/* Update entry */
 				var count = dict[keyIndex].value + 1;
 				dict.splice(keyIndex, 1);
-				dict.push({key:el, 
-						   value:count});
+				dict.push({key:el, value:count});
 			}
 		}
 		return dict;

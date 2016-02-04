@@ -146,7 +146,7 @@
 		return -1;
 	}
 	
-	/* Removes previouly selected/highlighted entries in Analysis table */
+	/* Removes previously selected/highlighted entries in Analysis table */
 	function refreshSelection() {
 		var entries = document.getElementsByClassName("entry");
 		for (var i = 0; i < entries.length; i++) {
